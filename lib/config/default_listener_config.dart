@@ -1,4 +1,4 @@
-import 'package:bloc_utils/widgets/dialog/loading_dialog.dart';
+import 'package:warped_bloc/widgets/dialog/loading_dialog.dart';
 import 'package:flutter/material.dart';
 import '../states/state.dart';
 

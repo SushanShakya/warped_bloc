@@ -1,4 +1,4 @@
-import 'package:bloc_utils/bloc_utils.dart';
+import 'package:warped_bloc/warped_bloc.dart';
 
 class HomeActionSuccess extends DataState<void> {
   const HomeActionSuccess() : super(data: null);

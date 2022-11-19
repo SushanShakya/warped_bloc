@@ -1,4 +1,4 @@
-library bloc_utils;
+library warped_bloc;
 
 export 'package:bloc/bloc.dart';
 

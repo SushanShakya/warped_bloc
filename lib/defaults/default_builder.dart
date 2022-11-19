@@ -1,4 +1,4 @@
-import 'package:bloc_utils/config/default_builder_config.dart';
+import 'package:warped_bloc/config/default_builder_config.dart';
 import 'package:flutter/material.dart';
 
 import '../states/state.dart';

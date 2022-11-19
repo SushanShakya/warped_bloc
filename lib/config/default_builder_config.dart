@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bloc_utils/widgets/error_widget.dart';
-import 'package:bloc_utils/widgets/loading_widget.dart';
+import 'package:warped_bloc/widgets/error_widget.dart';
+import 'package:warped_bloc/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../states/state.dart';

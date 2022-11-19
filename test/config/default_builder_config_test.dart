@@ -1,7 +1,7 @@
-import 'package:bloc_utils/config/default_builder_config.dart';
-import 'package:bloc_utils/states/state.dart';
-import 'package:bloc_utils/widgets/error_widget.dart';
-import 'package:bloc_utils/widgets/loading_widget.dart';
+import 'package:warped_bloc/config/default_builder_config.dart';
+import 'package:warped_bloc/states/state.dart';
+import 'package:warped_bloc/widgets/error_widget.dart';
+import 'package:warped_bloc/widgets/loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 

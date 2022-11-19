@@ -1,4 +1,4 @@
-import 'package:bloc_utils/bloc_utils.dart';
+import 'package:warped_bloc/warped_bloc.dart';
 import 'package:example/bloc/home_action_cubit.dart';
 import 'package:example/bloc/home_cubit.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:bloc_utils/widgets/loading_widget.dart';
+import 'package:warped_bloc/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 
 class DefaultLoadingDialog extends StatelessWidget {
