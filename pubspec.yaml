@@ -1,9 +1,9 @@
 name: warped_bloc
 description: BLoC Utilities to make your life easier when you want to perform API Calls
 version: 0.0.1
-repository: https://github.com/SushanShakya/bloc_utils
-issue_tracker: https://github.com/SushanShakya/bloc_utils/issues
-homepage: https://github.com/SushanShakya/bloc_utils
+repository: https://github.com/SushanShakya/warped_bloc
+issue_tracker: https://github.com/SushanShakya/warped_bloc/issues
+homepage: https://github.com/SushanShakya/warped_bloc
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
