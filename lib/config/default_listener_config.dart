@@ -2,6 +2,12 @@ import 'package:warped_bloc/widgets/dialog/loading_dialog.dart';
 import 'package:flutter/material.dart';
 import '../states/state.dart';
 
+/// This configuration will be used by the [defaultListener()]
+/// To determine what to build when there is
+/// [Loading State] [State Changes] [Data State] [Error State]
+/// Default Behaviour is that it will show a [Loading Dialog] and then
+/// when the [state changes] it will stop showing loading and then show
+/// [Success Snackbar] or [Error Snackbar] based on [Data State] or [Error State]
 class DefaultListenerConfig {
   static void Function(BuildContext context)? _onLoading;
   static void Function<D>(BuildContext context, D data)? _onData;
@@ -47,6 +53,8 @@ class DefaultListenerConfig {
         Navigator.of(context).pop();
       };
 
+  /// Use this function inside [main] to configure [defaultListener]
+  /// [to do Nothing] when the state changes
   static void configureToDoNothing() {
     _onLoading = (c) {};
     _onData = <D>(c, d) {};
@@ -54,6 +62,8 @@ class DefaultListenerConfig {
     _onStateChange = (c) {};
   }
 
+  /// Use this function inside [main] to configure [defaultListener]
+  /// To perform certain task for each state.
   static void configure({
     required void Function(BuildContext context)? onLoading,
     required void Function<D>(BuildContext context, D state)? onData,

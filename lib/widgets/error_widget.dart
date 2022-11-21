@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+/// This is the default [Widget] that gets shown whenever
+/// any error occurs.
 class DefaultErrorWidget extends StatelessWidget {
   final String message;
   final void Function()? onRetry;

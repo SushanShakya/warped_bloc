@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 enum _WrapperType { listenerOnly, builderOnly, consumer, none }
 
+/// [Widget] to automatically switch between [BlocBuilder], [BlocListener] and [BlocConsumer]
 class BlocWrapper<E extends BlocBase<T>, T> extends StatelessWidget {
   final void Function(BuildContext context, T state)? listener;
   final Widget Function(BuildContext context, T state)? builder;
