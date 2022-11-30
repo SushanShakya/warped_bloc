@@ -8,8 +8,11 @@ class AsyncCubit extends Cubit<BlocState> {
   }) : super(initialState ?? InitialState());
 
   /// Use this function to handle [Loading State] and [Error State] automatically
-  void handleDefaultStates(Future<void> Function() executor) async {
-    emit(LoadingState());
+  void handleDefaultStates(Future<void> Function() executor,
+      {bool showLoading = true}) async {
+    if (showLoading) {
+      emit(LoadingState());
+    }
     try {
       await executor();
     } on Failure catch (e) {

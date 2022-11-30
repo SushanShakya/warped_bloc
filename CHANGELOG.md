@@ -10,3 +10,7 @@
 
 > Include support for other errors when using [handleDefaultStates] in [AsyncCubit]
 > Updates Documentation of Code
+
+## 0.0.4
+
+> Able to control loading state when handling default state.
