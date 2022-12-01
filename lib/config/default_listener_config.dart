@@ -66,7 +66,7 @@ class DefaultListenerConfig {
   /// To perform certain task for each state.
   static void configure({
     required void Function(BuildContext context)? onLoading,
-    required void Function<D>(BuildContext context, D state)? onData,
+    required void Function<D>(BuildContext context, D data)? onData,
     required void Function<E>(BuildContext context, ErrorState<E> state)?
         onError,
     void Function(BuildContext context)? onStateChange,

@@ -14,3 +14,7 @@
 ## 0.0.4
 
 > Able to control loading state when handling default state.
+
+## 0.0.5
+
+> Update Readme

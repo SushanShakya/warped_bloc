@@ -11,6 +11,14 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
+<p align="center">
+<img src="./assets/warped_bloc.png" alt="Bloc" />
+</p>
+
+<br>
+
+[Read Proper Documentation on Medium](https://medium.com/@sushaanshakya88/using-warped-bloc-to-reduce-boilerplate-code-when-using-bloc-pattern-flutter-d5adf4d4f47d)
+
 Normally, when we use "bloc" as a state management solution we use it to fetch some data.
 
 The Logic for GET request and POST request is quite similar.
