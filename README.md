@@ -12,7 +12,7 @@ and the Flutter guide for
 -->
 
 <p align="center">
-<img src="./assets/warped_bloc.png" alt="Bloc" />
+<img src="https://raw.githubusercontent.com/SushanShakya/warped_bloc/main/assets/warped_bloc.png" alt="Bloc" />
 </p>
 
 <br>
