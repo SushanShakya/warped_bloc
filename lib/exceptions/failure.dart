@@ -3,11 +3,12 @@ import 'package:equatable/equatable.dart';
 
 /// The type of exception that occurs by default
 /// inside a function in [AsyncCubit]
-abstract class Failure extends Equatable {
+abstract class Failure<T> extends Equatable {
   final String message;
+  final T? data;
 
-  const Failure(this.message);
+  const Failure(this.message, {this.data});
 
   @override
-  List<Object> get props => [message];
+  List<Object?> get props => [message, data];
 }
