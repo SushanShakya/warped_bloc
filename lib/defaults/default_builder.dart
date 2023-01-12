@@ -9,7 +9,7 @@ import '../states/state.dart';
 Widget Function(BuildContext, BlocState)
     defaultBuilder<D extends DataState, E>({
   Widget Function()? onLoading,
-  required Widget Function(D state) onData,
+  required Widget Function(D) onData,
   Widget Function(ErrorState<E> state)? onError,
   Widget Function()? otherwise,
 }) =>
@@ -20,7 +20,7 @@ Widget Function(BuildContext, BlocState)
                 : DefaultBuilderConfig.onLoading();
           }
           if (state is D) {
-            return onData(state.data);
+            return onData(state);
           }
           if (state is ErrorState<E>) {
             return (onError != null)

@@ -8,7 +8,7 @@ import '../states/state.dart';
 /// E = Type of Data expected in Error
 void Function(BuildContext, BlocState) defaultListener<D extends DataState, E>({
   void Function(BuildContext context)? onLoading,
-  void Function(BuildContext context, D data)? onData,
+  void Function(BuildContext context, D state)? onData,
   void Function(BuildContext context, ErrorState<E> state)? onError,
   void Function(BuildContext context)? onStateChange,
 }) =>
@@ -23,8 +23,8 @@ void Function(BuildContext, BlocState) defaultListener<D extends DataState, E>({
           : DefaultListenerConfig.onStateChange(context);
       if (state is D) {
         return (onData != null)
-            ? onData(context, state.data)
-            : DefaultListenerConfig.onData<D>(context, state.data);
+            ? onData(context, state)
+            : DefaultListenerConfig.onData<D>(context, state);
       }
       if (state is ErrorState<E>) {
         return (onError != null)

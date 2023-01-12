@@ -32,3 +32,8 @@
 
 > Breaking Changes
 > Removes the First generic for defaultBuilder and defaultListener
+
+## 0.0.10
+
+> Breaking Changes
+> Fix response for DataState in defaultBuilder and defaultListener.
