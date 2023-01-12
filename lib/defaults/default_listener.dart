@@ -6,13 +6,13 @@ import '../states/state.dart';
 /// T = Type of state of Bloc in use
 /// D = Type of Data expected when you get Data
 /// E = Type of Data expected in Error
-void Function(BuildContext, T) defaultListener<T, D extends DataState, E>({
+void Function(BuildContext, BlocState) defaultListener<D extends DataState, E>({
   void Function(BuildContext context)? onLoading,
   void Function(BuildContext context, D data)? onData,
   void Function(BuildContext context, ErrorState<E> state)? onError,
   void Function(BuildContext context)? onStateChange,
 }) =>
-    (context, T state) {
+    (context, state) {
       if (state is LoadingState) {
         return (onLoading != null)
             ? onLoading(context)

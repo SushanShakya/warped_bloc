@@ -27,3 +27,8 @@
 
 > Breaking Changes
 > Changes the type for data to be a state instead of the data it represents.
+
+## 0.0.9
+
+> Breaking Changes
+> Removes the First generic for defaultBuilder and defaultListener
