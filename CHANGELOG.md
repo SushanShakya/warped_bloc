@@ -22,3 +22,8 @@
 ## 0.0.7
 
 > Update Error to include data
+
+## 0.0.8
+
+> Breaking Changes
+> Changes the type for data to be a state instead of the data it represents.

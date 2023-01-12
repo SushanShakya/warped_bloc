@@ -6,7 +6,7 @@ import '../states/state.dart';
 /// T = Type of state of Bloc in use
 /// D = Type of Data expected when you get Data
 /// E = Type of Data expected in Error
-Widget Function(BuildContext, T) defaultBuilder<T, D, E>({
+Widget Function(BuildContext, T) defaultBuilder<T, D extends DataState, E>({
   Widget Function()? onLoading,
   required Widget Function(D state) onData,
   Widget Function(ErrorState<E> state)? onError,
@@ -18,7 +18,7 @@ Widget Function(BuildContext, T) defaultBuilder<T, D, E>({
             ? onLoading()
             : DefaultBuilderConfig.onLoading();
       }
-      if (state is DataState<D>) {
+      if (state is D) {
         return onData(state.data);
       }
       if (state is ErrorState<E>) {
