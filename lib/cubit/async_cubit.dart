@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:warped_bloc/warped_bloc.dart';
 
 /// This cubit is a wrap around for easily dealing with
@@ -18,7 +20,8 @@ class AsyncCubit extends Cubit<BlocState> {
     } on Failure catch (e) {
       emit(ErrorState(message: e.message));
     } catch (e) {
-      emit(ErrorState(message: e.toString()));
+      log(e.toString());
+      emit(const ErrorState(message: "Unknown Error has occured"));
     }
   }
 }

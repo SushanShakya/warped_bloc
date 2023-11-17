@@ -10,9 +10,8 @@ import '../states/state.dart';
 /// [Success Snackbar] or [Error Snackbar] based on [Data State] or [Error State]
 class DefaultListenerConfig {
   static void Function(BuildContext context)? _onLoading;
-  static void Function<D extends DataState>(BuildContext context, D data)?
-      _onData;
-  static void Function<E>(BuildContext context, ErrorState<E> state)? _onError;
+  static void Function(BuildContext context, DataState data)? _onData;
+  static void Function(BuildContext context, ErrorState state)? _onError;
   static void Function(BuildContext context)? _onStateChange;
 
   static void Function(BuildContext context) get onLoading =>
@@ -21,34 +20,38 @@ class DefaultListenerConfig {
         showLoadingDialog(context);
       };
 
-  static void Function<D extends DataState>(BuildContext context, D data)
-      get onData =>
-          _onData ??
-          <D extends DataState>(context, data) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Success',
-                  style: TextStyle(color: Colors.white),
-                ),
-                backgroundColor: Colors.green,
-              ),
-            );
-          };
-  static void Function<E>(BuildContext context, ErrorState<E> state)
-      get onError =>
-          _onError ??
-          <E>(context, state) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.red,
-                content: Text(
-                  state.message,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-            );
-          };
+  static void Function(
+    BuildContext context,
+    DataState data,
+  ) get onData =>
+      _onData ??
+      (context, data) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Success',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.green,
+          ),
+        );
+      };
+  static void Function(
+    BuildContext context,
+    ErrorState state,
+  ) get onError =>
+      _onError ??
+      (context, state) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              state.message,
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      };
   static void Function(BuildContext context) get onStateChange =>
       _onStateChange ??
       (context) {
@@ -59,19 +62,17 @@ class DefaultListenerConfig {
   /// [to do Nothing] when the state changes
   static void configureToDoNothing() {
     _onLoading = (c) {};
-    _onData = <D extends DataState>(c, d) {};
-    _onError = <E>(c, state) {};
+    _onData = (c, d) {};
+    _onError = (c, state) {};
     _onStateChange = (c) {};
   }
 
   /// Use this function inside [main] to configure [defaultListener]
   /// To perform certain task for each state.
   static void configure({
-    required void Function(BuildContext context)? onLoading,
-    required void Function<D extends DataState>(BuildContext context, D data)?
-        onData,
-    required void Function<E>(BuildContext context, ErrorState<E> state)?
-        onError,
+    void Function(BuildContext context)? onLoading,
+    void Function(BuildContext context, DataState data)? onData,
+    void Function(BuildContext context, ErrorState state)? onError,
     void Function(BuildContext context)? onStateChange,
   }) {
     if (onLoading != null) {

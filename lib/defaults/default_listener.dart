@@ -24,11 +24,11 @@ void Function(BuildContext, BlocState) defaultListener<D extends DataState, E>({
       if (state is D) {
         return (onData != null)
             ? onData(context, state)
-            : DefaultListenerConfig.onData<D>(context, state);
+            : DefaultListenerConfig.onData(context, state);
       }
       if (state is ErrorState<E>) {
         return (onError != null)
             ? onError(context, state)
-            : DefaultListenerConfig.onError<E>(context, state);
+            : DefaultListenerConfig.onError(context, state);
       }
     };
