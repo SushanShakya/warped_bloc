@@ -9,30 +9,31 @@ import '../states/state.dart';
 /// To determine what to build when there is a [Loading State] and [Error State]
 class DefaultBuilderConfig {
   /// Called by [defaultBuilder] when there is a loading state
-  static Widget Function()? _onLoading;
+  static Widget Function(BuildContext context)? _onLoading;
 
   /// Called by [defaultBuilder] when there is a error state
-  static Widget Function<E>(ErrorState<E> state)? _onError;
+  static Widget Function(BuildContext context, ErrorState state)? _onError;
 
-  static Widget Function() get onLoading {
+  static Widget Function(BuildContext context) get onLoading {
     return DefaultBuilderConfig._onLoading ??
-        () {
+        (context) {
           return DefaultLoadingWidget();
         };
   }
 
-  static Widget Function<E>(ErrorState<E> state) get onError {
+  static Widget Function(BuildContext context, ErrorState state) get onError {
     return DefaultBuilderConfig._onError ??
-        <E>(state) {
+        (context, state) {
           return DefaultErrorWidget(message: state.message);
         };
   }
 
   /// Call this function inside [main] to configure what [Widget]
   /// to show when there is [Loading State] or [Error State]
-  static configure(
-      {Widget Function()? onLoading,
-      Widget Function<E>(ErrorState<E> state)? onError}) {
+  static configure({
+    Widget Function(BuildContext context)? onLoading,
+    Widget Function(BuildContext context, ErrorState state)? onError,
+  }) {
     if (onLoading != null) {
       _configureOnLoading(onLoading);
     }
@@ -41,11 +42,13 @@ class DefaultBuilderConfig {
     }
   }
 
-  static _configureOnLoading(Widget Function()? onLoading) {
+  static _configureOnLoading(Widget Function(BuildContext context)? onLoading) {
     DefaultBuilderConfig._onLoading = onLoading;
   }
 
-  static _configureOnError(Widget Function<E>(ErrorState<E> state) onError) {
+  static _configureOnError(
+    Widget Function(BuildContext context, ErrorState state) onError,
+  ) {
     DefaultBuilderConfig._onError = onError;
   }
 }

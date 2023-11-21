@@ -1,0 +1,10 @@
+{
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "[Cobalt3]": {
+            "comments": "#FF0000",
+            "strings": "#00ffff"
+        },
+        "textMateRules": []
+    }
+}

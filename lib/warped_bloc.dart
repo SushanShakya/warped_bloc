@@ -1,7 +1,5 @@
 library warped_bloc;
 
-export 'package:bloc/bloc.dart';
-
 // Configurations
 export 'config/default_builder_config.dart';
 export 'config/default_listener_config.dart';
@@ -26,3 +24,5 @@ export 'cubit/async_cubit.dart';
 
 // Failures
 export 'exceptions/failure.dart';
+
+export 'package:flutter_bloc/flutter_bloc.dart';

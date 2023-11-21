@@ -37,3 +37,13 @@
 
 > Breaking Changes
 > Fix response for DataState in defaultBuilder and defaultListener.
+
+## 1.0.0
+
+> Breaking Changes
+> Change the Parameters passed to defaultBuilder and defaultListener
+> Make DefaultBuilderConfig and DefaultListenerConfig usable.
+
+## 1.0.1
+
+> Add Default Error Config for extracting error messages

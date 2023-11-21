@@ -4,6 +4,18 @@ import 'package:example/bloc/home_cubit.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  DefaultBuilderConfig.configure(onLoading: (context) {
+    return const Center(
+      child: Text("LOADING"),
+    );
+  }, onError: (context, e) {
+    return Column(
+      children: [
+        const Text("Errrrrrrorrr"),
+        Text(e.message),
+      ],
+    );
+  });
   runApp(MyApp());
 }
 
@@ -50,8 +62,9 @@ class _HomeState extends State<Home> {
         }),
         child: BlocWrapper<HomeCubit, BlocState>(
           bloc: cubit,
-          builder: defaultBuilder<BlocState, List<String>, String>(
-            onData: (data) {
+          builder: defaultBuilder<HomeLoaded, String>(
+            onData: (context, state) {
+              final data = state.data;
               return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (c, i) {
