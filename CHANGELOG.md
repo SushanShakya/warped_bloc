@@ -52,3 +52,7 @@
 
 > Adds PaginatedAsyncCubit
 > Adds PaginatedBuilder for pagination related tasks
+
+## 1.0.3
+
+> Update documentation
