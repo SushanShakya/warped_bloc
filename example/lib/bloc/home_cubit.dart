@@ -1,3 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:example/repo/home_repo.dart';
+
 import 'package:warped_bloc/warped_bloc.dart';
 
 class HomeLoaded extends DataState<List<String>> {
@@ -5,11 +8,15 @@ class HomeLoaded extends DataState<List<String>> {
 }
 
 class HomeCubit extends AsyncCubit {
+  final HomeRepo repo;
+  HomeCubit({
+    required this.repo,
+  });
   fetch() {
     // This Function Takes care of Loading and Error State
     handleDefaultStates(() async {
-      await Future.delayed(const Duration(seconds: 2));
-      emit(const HomeLoaded(['Sushan', 'Suraj', 'Sakshyam']));
+      final data = await repo.fetch();
+      emit(HomeLoaded(data));
     });
   }
 }

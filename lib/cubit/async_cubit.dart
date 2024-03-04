@@ -11,9 +11,12 @@ class AsyncCubit extends Cubit<BlocState> {
   }) : super(initialState ?? InitialState());
 
   /// Use this function to handle [Loading State] and [Error State] automatically
-  void handleDefaultStates(Future<void> Function() executor,
-      {bool showLoading = true}) async {
-    if (showLoading) {
+  void handleDefaultStates(
+    Future<void> Function() executor, {
+    bool? showLoading,
+    String? defaultErrorMessage,
+  }) async {
+    if (showLoading ?? true) {
       emit(LoadingState());
     }
     try {
@@ -23,7 +26,12 @@ class AsyncCubit extends Cubit<BlocState> {
     } catch (e) {
       final message = await DefaultErrorConfig.onErrorCaught(e);
       log(e.toString());
-      emit(ErrorState(message: message ?? "Unknown Error has occured"));
+      emit(
+        ErrorState(
+          message:
+              message ?? ((defaultErrorMessage) ?? "Unknown Error has occured"),
+        ),
+      );
     }
   }
 }
