@@ -47,3 +47,8 @@
 ## 1.0.1
 
 > Add Default Error Config for extracting error messages
+
+## 1.0.2
+
+> Adds PaginatedAsyncCubit
+> Adds PaginatedBuilder for pagination related tasks
