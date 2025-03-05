@@ -1,10 +1,11 @@
 {
-    "editor.tokenColorCustomizations": {
-        "comments": "",
-        "[Cobalt3]": {
-            "comments": "#FF0000",
-            "strings": "#00ffff"
-        },
-        "textMateRules": []
-    }
+  "editor.tokenColorCustomizations": {
+    "comments": "",
+    "[Cobalt3]": {
+      "comments": "#FF0000",
+      "strings": "#00ffff"
+    },
+    "textMateRules": []
+  },
+  "dart.flutterSdkPath": ".fvm/versions/3.24.2"
 }

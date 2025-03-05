@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:warped_bloc/config/default_error_config.dart';
@@ -22,7 +23,7 @@ class AsyncCubit extends Cubit<BlocState> {
     try {
       await executor();
     } on Failure catch (e) {
-      emit(ErrorState(message: e.message));
+      emit(ErrorState(message: e.message, data: e.data));
     } catch (e) {
       final message = await DefaultErrorConfig.onErrorCaught(e);
       log(e.toString());
