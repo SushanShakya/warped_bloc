@@ -1,23 +1,23 @@
 name: warped_bloc
 description: BLoC Utilities to make your life easier when you want to perform API Calls
-version: 1.0.4
+version: 2.0.0
 repository: https://github.com/SushanShakya/warped_bloc
 issue_tracker: https://github.com/SushanShakya/warped_bloc/issues
 homepage: https://github.com/SushanShakya/warped_bloc
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.16.2 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.1
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^6.0.0
 
 flutter:

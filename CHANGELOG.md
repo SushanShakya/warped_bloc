@@ -56,3 +56,7 @@
 ## 1.0.3
 
 > Update documentation
+
+## 2.0.0
+
+> Updates flutter_bloc version

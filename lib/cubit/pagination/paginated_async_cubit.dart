@@ -1,13 +1,11 @@
 import 'package:warped_bloc/warped_bloc.dart';
 
-import 'pagination_param.dart';
-
 /// A cubit designed specifically for handling paginated
 /// data.
 ///
 /// Usage Example :
 ///
-/// class ArtistCubit extends PaginatedAsyncCubit<Artist> {
+/// class ArtistCubit extends PaginatedAsyncCubit\<Artist> {
 ///   final ArtistRepo repo;
 
 ///   ArtistCubit({required this.repo});

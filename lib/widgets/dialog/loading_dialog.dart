@@ -1,8 +1,10 @@
-import 'package:warped_bloc/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:warped_bloc/widgets/loading_widget.dart';
 
 /// Shows this [Widget] by default when there is a loading
 class DefaultLoadingDialog extends StatelessWidget {
+  const DefaultLoadingDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

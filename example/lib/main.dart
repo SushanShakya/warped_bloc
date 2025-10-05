@@ -1,10 +1,9 @@
-import 'package:example/bloc/paginated_home_cubit.dart';
-import 'package:example/repo/home_repo.dart';
-import 'package:warped_bloc/cubit/pagination/paginated_builder.dart';
-import 'package:warped_bloc/warped_bloc.dart';
 import 'package:example/bloc/home_action_cubit.dart';
 import 'package:example/bloc/home_cubit.dart';
+import 'package:example/bloc/paginated_home_cubit.dart';
+import 'package:example/repo/home_repo.dart';
 import 'package:flutter/material.dart';
+import 'package:warped_bloc/warped_bloc.dart';
 
 void main() {
   DefaultBuilderConfig.configure(onLoading: (context) {
@@ -19,10 +18,12 @@ void main() {
       ],
     );
   });
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -33,6 +34,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<Home> createState() => _HomeState();
 }
